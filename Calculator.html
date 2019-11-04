@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+	</head>
+	<body>
+		<script>
+			let exit;
+			let firstNumber;
+			let secondNumber;
+			let operator;
+			let answer;
+			
+			while (exit !== 'q') {
+				// Ask for first number
+				firstNumber = prompt("Calculator\n==========\n\nEnter first number: ");
+				firstNumber = Number(firstNumber);
+				// Ask for operator
+				operator = prompt('Enter (\'+\', \'-\', \'*\', or \'/\'): ');
+				// Ask for second number'
+				secondNumber = prompt('Enter second number: ');
+				secondNumber = Number(secondNumber);
+				switch (operator) {
+					case '+':
+						answer = firstNumber + secondNumber;
+						break;
+					case '-':
+						answer = firstNumber - secondNumber;
+						break;
+					case '*':
+						answer = firstNumber * secondNumber;
+						break;
+					case '/':
+						answer = firstNumber / secondNumber;
+						break;
+					default:
+						alert('Error: invalid operator entered. Try again.')
+						break;
+				}
+				if (answer) {
+					alert('Your answer is: ' + answer);
+					answer = 0;
+				}
+				exit = prompt('Type \'q\' to quit. Type anything else to continue');
+			}
+		</script>
+	</body>
+</html>
